@@ -1,15 +1,32 @@
+body {
+    background-color: #f4edde;
+}
+
 #choixCoup,
+.container-resultat {
+    display: flex;
+    justify-content: center;
+}
+
 #resultat {
+    width: 25%;
+    margin-top: 5px;
+    border: solid 3px black;
+}
+
+#resultat p {
     display: flex;
     justify-content: center;
 }
 
 #choixCoup button {
-    background: none;
-    color: inherit;
+    background-color: steelblue;
     border: 2px;
     padding: 10px 10px;
+    margin: 2px;
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    width: 10%;
+    height: 10%;
 }
