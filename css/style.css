@@ -39,3 +39,7 @@ body {
 #choixCoup button:hover {
     background-color: rgb(133, 188, 233);
 }
+
+h1 {
+    text-align: center;
+}
