@@ -1,5 +1,6 @@
 const tableauCoups = ["Pierre", "Feuille", "Ciseaux"];
 const boiteResultat = document.getElementById("resultat");
+const boiteStats = document.getElementById("stats");
 const correspondanceCoups = {
     Pierre: {
         Pierre: "Nul",
@@ -17,6 +18,31 @@ const correspondanceCoups = {
         Ciseaux: "Nul",
     },
 };
+const stats = {
+    Victoire: 0,
+    Perdu: 0,
+    Nul: 0,
+};
+
+function gestionStats(resultatShifumi) {
+    stats[resultatShifumi]++;
+    while (boiteStats.firstChild) {
+        boiteStats.removeChild(boiteStats.firstChild);
+    }
+    const noeudStatsVictoire = document.createElement("p");
+    noeudStatsVictoire.appendChild(
+        document.createTextNode(`Victoire : ${stats["Victoire"]}`)
+    );
+    const noeudStatsDefaite = document.createElement("p");
+    noeudStatsDefaite.appendChild(
+        document.createTextNode(`Défaite : ${stats["Perdu"]}`)
+    );
+    const noeudStatsNul = document.createElement("p");
+    noeudStatsNul.appendChild(document.createTextNode(`Nul : ${stats["Nul"]}`));
+    boiteStats.appendChild(noeudStatsVictoire);
+    boiteStats.appendChild(noeudStatsDefaite);
+    boiteStats.appendChild(noeudStatsNul);
+}
 
 function shifumi(coupJoueur) {
     while (boiteResultat.firstChild) {
@@ -32,15 +58,15 @@ function shifumi(coupJoueur) {
     noeudCoupOrdinateur.appendChild(
         document.createTextNode(`Ordinateur : ${coupOrdinateur}`)
     );
-    const resultatShifumi = document.createElement("p");
-    resultatShifumi.appendChild(
-        document.createTextNode(
-            `Résultat : ${correspondanceCoups[coupJoueur][coupOrdinateur]}`
-        )
+    const resultatShifumi = correspondanceCoups[coupJoueur][coupOrdinateur];
+    const noeudResultatShifumi = document.createElement("p");
+    noeudResultatShifumi.appendChild(
+        document.createTextNode(`Résultat : ${resultatShifumi}`)
     );
     boiteResultat.appendChild(noeudCoupJoueur);
     boiteResultat.appendChild(noeudCoupOrdinateur);
-    boiteResultat.appendChild(resultatShifumi);
+    boiteResultat.appendChild(noeudResultatShifumi);
+    gestionStats(resultatShifumi);
 }
 
 const boiteChoixCoup = document.getElementById("choixCoup");

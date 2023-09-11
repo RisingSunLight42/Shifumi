@@ -2,25 +2,30 @@ body {
     background-color: #f4edde;
 }
 
-#choixCoup,
-.container-resultat {
+#choixCoup {
     display: flex;
     justify-content: center;
 }
 
-#resultat {
+.container-resultat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultat {
     width: 25%;
-    margin-top: 5px;
+    margin: 5px;
     border: solid 3px black;
 }
 
-#resultat p {
+.resultat p {
     display: flex;
     justify-content: center;
 }
 
 #choixCoup button {
-    background-color: steelblue;
+    background-color: rgb(78, 144, 199);
     border: 2px;
     padding: 10px 10px;
     margin: 2px;
@@ -29,4 +34,8 @@ body {
     outline: inherit;
     width: 10%;
     height: 10%;
+}
+
+#choixCoup button:hover {
+    background-color: rgb(133, 188, 233);
 }
