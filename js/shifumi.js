@@ -24,19 +24,20 @@ function shifumi(coupJoueur) {
     }
     const coupOrdinateur =
         tableauCoups[Math.floor(Math.random() * tableauCoups.length)];
-    const noeudCoupJoueur = document
-        .createElement("p")
-        .appendChild(document.createTextNode(`Joueur : ${coupJoueur}`));
-    const noeudCoupOrdinateur = document
-        .createElement("p")
-        .appendChild(document.createTextNode(`Ordinateur : ${coupOrdinateur}`));
-    const resultatShifumi = document
-        .createElement("p")
-        .appendChild(
-            document.createTextNode(
-                `Résultat : ${correspondanceCoups[coupJoueur][coupOrdinateur]}`
-            )
-        );
+    const noeudCoupJoueur = document.createElement("p");
+    noeudCoupJoueur.appendChild(
+        document.createTextNode(`Joueur : ${coupJoueur}`)
+    );
+    const noeudCoupOrdinateur = document.createElement("p");
+    noeudCoupOrdinateur.appendChild(
+        document.createTextNode(`Ordinateur : ${coupOrdinateur}`)
+    );
+    const resultatShifumi = document.createElement("p");
+    resultatShifumi.appendChild(
+        document.createTextNode(
+            `Résultat : ${correspondanceCoups[coupJoueur][coupOrdinateur]}`
+        )
+    );
     boiteResultat.appendChild(noeudCoupJoueur);
     boiteResultat.appendChild(noeudCoupOrdinateur);
     boiteResultat.appendChild(resultatShifumi);
