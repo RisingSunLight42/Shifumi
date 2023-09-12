@@ -15,6 +15,7 @@ body {
 
 .resultat {
     width: 25%;
+    min-width: 200px;
     margin: 5px;
     border: solid 3px black;
 }
@@ -34,6 +35,7 @@ body {
     outline: inherit;
     width: 10%;
     height: 10%;
+    min-width: 100px;
 }
 
 #choixCoup button:hover {
